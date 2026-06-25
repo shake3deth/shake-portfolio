@@ -1,0 +1,11 @@
+import { MainLayout } from "../layouts/main/main-layout";
+
+export default function Home() {
+  return(
+    <main>
+      <MainLayout>
+          <h1 className="text-center text-2xl font-bold">Hello,world I am shake</h1>
+      </MainLayout>
+    </main>
+  );
+};
