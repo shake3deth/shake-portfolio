@@ -1,9 +1,25 @@
 import { MainLayout } from "../layouts/main/main-layout";
+import { SkillCard } from "../components/skill-card/skill-card";
+
+const skills =[
+  {
+    title: "Next.js",
+    description: "ページの作成、ルーティング、コンポーネント分割を練習しています。",
+  },
+  {
+    title: "Tailwind CSS",
+    description: "classNameを使って、余白、色、レイアウトを調整できます。",
+  },
+  {
+    title: "GitHub",
+    description: "ブランチ、コミット、push、PR作成を練習しています。",
+  }
+]
 
 export default function Home() {
   return(
     <MainLayout>
-      <div className="flex w-full mx-auto max-w-5xl flex-col gap-16 px-6 py-12">
+      <div className="flex w-full mx-auto max-w-5xl flex-col gap-16 px-6 py-12 ">
         <section className="rounded-2xl bg-neutral-500 text-white px-8 py-16">
           <p className="text-sm font-bold text-sky-300">Portfolio</p>
           <h1 className="mt-4 text-4xl font-bold">Hello,World I am shake</h1>
@@ -11,20 +27,11 @@ export default function Home() {
         </section>
 
         <section id='skills'>
-          <h2>Skills</h2>
-          <div>
-            <div>
-              <h3>Next.js</h3>
-              <p>ページ作成、ルーティング、コンポーネント分割を練習しています。</p>
-            </div>
-            <div>
-              <h3>Tailwind CSS</h3>
-              <p>classNameを使って、余白、色、レイアウトを調整できます。</p>
-            </div>
-            <div>
-              <h3>GitHub</h3>
-              <p>ブランチ、コミット、push、PR作成を練習しています。</p>
-            </div>
+          <h2 className="text-2xl font-bold text-neutral-900">Skills</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {skills.map((skill) =>(
+              <SkillCard key={skill.title} title={skill.title} description={skill.description} />
+            ))}
           </div>
         </section>
       </div>
