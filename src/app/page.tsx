@@ -14,7 +14,11 @@ const skills =[
   {
     title: "GitHub",
     description: "ブランチ、コミット、push、PR作成を練習しています。",
-  }
+  },
+  {
+    title: "TypeScript",
+    description: "型を使って、コードのミスに気付けるようにします。"
+  },
 ]
 
 const works =[
@@ -42,7 +46,7 @@ export default function Home() {
 
         <section id='skills'>
           <h2 className="text-2xl font-bold text-neutral-900">Skills</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-4">
             {skills.map((skill) =>(
               <SkillCard key={skill.title} title={skill.title} description={skill.description} />
             ))}
